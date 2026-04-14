@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+if (localStorage.getItem("login") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+<body>
+
+<nav class="navbar">
+  <h2>Panel Administrador</h2>
+  <a href="index.html" class="login-btn" onclick="logout()">Cerrar sesión</a>
+</nav>
+
+<div class="admin-container">
+
+  <!-- FORMULARIO -->
+  <div class="admin-form">
+
+    <h3>Subir / Editar Archivo</h3>
+
+    <input type="hidden" id="editId">
+
+    <input type="text" id="tituloArchivo" placeholder="Título">
+    <input type="text" id="descArchivo" placeholder="Descripción">
+
+    <select id="semanaArchivo">
+      <option value="1">Semana 1</option>
+      <option value="2">Semana 2</option>
+      <option value="3">Semana 3</option>
+      <option value="4">Semana 4</option>
+      <option value="5">Semana 5</option>
+      <option value="6">Semana 6</option>
+      <option value="7">Semana 7</option>
+      <option value="8">Semana 8</option>
+      <option value="9">Semana 9</option>
+      <option value="10">Semana 10</option>
+      <option value="11">Semana 11</option>
+      <option value="12">Semana 12</option>
+      <option value="13">Semana 13</option>
+      <option value="14">Semana 14</option>
+      <option value="15">Semana 15</option>
+      <option value="16">Semana 16</option>
+    </select>
+
+    <input type="file" id="fileInput">
+
+    <button onclick="guardarArchivo()">Guardar</button>
+
+  </div>
+
+  <!-- LISTA -->
+  <div class="admin-list">
+    <h3>Archivos Subidos</h3>
+    <div id="adminLista"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

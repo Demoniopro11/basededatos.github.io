@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Semana 1</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONOS PRO -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2><i class="fa-solid fa-folder-open"></i> Portafolio</h2>
+
+  <a href="index.html" class="login-btn">
+    <i class="fa-solid fa-arrow-left"></i> Volver
+  </a>
+</nav>
+
+<div class="container">
+  <h1><i class="fa-solid fa-calendar-week"></i> Semana 1</h1>
+
+  <!-- 🔥 ARCHIVOS FIJOS -->
+  <div class="card">
+    <h3><i class="fa-solid fa-file-lines"></i> Tarea 1</h3>
+    <p><i class="fa-solid fa-book"></i> Trabajo de Base de Datos II</p>
+    <a href="archivos/tarea1.pdf" target="_blank" class="btn-pdf">
+      <i class="fa-solid fa-eye"></i> Ver PDF
+    </a>
+  </div>
+
+  <!-- 🔥 ARCHIVOS DINÁMICOS -->
+  <div id="archivos"></div>
+
+</div>
+
+<script>
+// 🔥 CARGAR DESDE LOCALSTORAGE
+let archivos = JSON.parse(localStorage.getItem("archivos")) || [];
+let contenedor = document.getElementById("archivos");
+
+archivos.forEach(a => {
+  if (a.semana == 1) {
+
+    let contenido = "";
+
+    if (a.tipo.startsWith("image/")) {
+      contenido = `<img src="${a.archivo}" style="max-width:100%; border-radius:10px;">`;
+    } else if (a.tipo === "application/pdf") {
+      contenido = `<a href="${a.archivo}" target="_blank" class="btn-pdf">
+        <i class="fa-solid fa-file-pdf"></i> Ver PDF
+      </a>`;
+    }
+
+    contenedor.innerHTML += `
+      <div class="card">
+        <h3><i class="fa-solid fa-folder"></i> ${a.titulo}</h3>
+        <p><i class="fa-solid fa-align-left"></i> ${a.desc}</p>
+        ${contenido}
+      </div>
+    `;
+  }
+});
+</script>
+
+</body>
+</html>

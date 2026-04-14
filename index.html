@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONOS PRO -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-bar">
+
+  <div class="brand"><i class="fa-solid fa-code"></i> Mi Portafolio</div>
+
+  <ul class="menu">
+
+    <li onclick="mostrarInicio()"><i class="fa-solid fa-house"></i> Inicio</li>
+
+    <!-- UNIDAD 1 -->
+    <li class="dropdown">Unidad 1
+      <ul class="submenu">
+        <li><a href="semana1.html"><i class="fa-solid fa-calendar-week"></i> Semana 1</a></li>
+        <li><a href="semana2.html"><i class="fa-solid fa-calendar-week"></i> Semana 2</a></li>
+        <li><a href="semana3.html"><i class="fa-solid fa-calendar-week"></i> Semana 3</a></li>
+        <li><a href="semana4.html"><i class="fa-solid fa-calendar-week"></i> Semana 4</a></li>
+      </ul>
+    </li>
+
+    <!-- UNIDAD 2 -->
+    <li class="dropdown">Unidad 2
+      <ul class="submenu">
+        <li><a href="semana5.html"><i class="fa-solid fa-calendar-week"></i> Semana 5</a></li>
+        <li><a href="semana6.html"><i class="fa-solid fa-calendar-week"></i> Semana 6</a></li>
+        <li><a href="semana7.html"><i class="fa-solid fa-calendar-week"></i> Semana 7</a></li>
+        <li><a href="semana8.html"><i class="fa-solid fa-calendar-week"></i> Semana 8</a></li>
+      </ul>
+    </li>
+
+    <!-- UNIDAD 3 -->
+    <li class="dropdown">Unidad 3
+      <ul class="submenu">
+        <li><a href="semana9.html"><i class="fa-solid fa-calendar-week"></i> Semana 9</a></li>
+        <li><a href="semana10.html"><i class="fa-solid fa-calendar-week"></i> Semana 10</a></li>
+        <li><a href="semana11.html"><i class="fa-solid fa-calendar-week"></i> Semana 11</a></li>
+        <li><a href="semana12.html"><i class="fa-solid fa-calendar-week"></i> Semana 12</a></li>
+      </ul>
+    </li>
+
+    <!-- UNIDAD 4 -->
+    <li class="dropdown">Unidad 4
+      <ul class="submenu">
+        <li><a href="semana13.html"><i class="fa-solid fa-calendar-week"></i> Semana 13</a></li>
+        <li><a href="semana14.html"><i class="fa-solid fa-calendar-week"></i> Semana 14</a></li>
+        <li><a href="semana15.html"><i class="fa-solid fa-calendar-week"></i> Semana 15</a></li>
+        <li><a href="semana16.html"><i class="fa-solid fa-calendar-week"></i> Semana 16</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <a href="login.html" class="login-btn">
+    <i class="fa-solid fa-user"></i> Iniciar Sesión
+  </a>
+
+</div>
+
+<!-- INICIO -->
+<div class="hero">
+  <div class="hero-text centro fade-in">
+
+    <h1 class="slide-up">
+      <span class="nombre">Jair Nuñez Michel</span>
+    </h1>
+
+    <p class="fade-delay">
+      Bienvenido a mi portafolio académico de Base de Datos II.
+      Aquí encontrarás todos mis trabajos organizados por semanas.
+    </p>
+
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="container fade-in">
+  <h2 id="titulo">Selecciona una semana</h2>
+  <div id="archivos"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

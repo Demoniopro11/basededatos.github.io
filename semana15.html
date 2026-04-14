@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Semana 15</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2>Portafolio</h2>
+  <a href="index.html" class="login-btn">⬅ Volver</a>
+</nav>
+
+<div class="container">
+  <h1>Semana 15</h1>
+
+  <div id="archivos"></div>
+</div>
+
+<script>
+let archivos = JSON.parse(localStorage.getItem("archivos")) || [];
+
+let contenedor = document.getElementById("archivos");
+
+archivos.forEach(a => {
+  if (a.semana == 15) {
+
+    let contenido = "";
+
+    if (a.tipo.startsWith("image/")) {
+      contenido = `<img src="${a.archivo}" style="max-width:100%">`;
+    } else if (a.tipo === "application/pdf") {
+      contenido = `<a href="${a.archivo}" target="_blank">📄 Ver PDF</a>`;
+    }
+
+    contenedor.innerHTML += `
+      <div class="card">
+        <h3>${a.titulo}</h3>
+        <p>${a.desc}</p>
+        ${contenido}
+      </div>
+    `;
+  }
+});
+</script>
+
+</body>
+</html>
